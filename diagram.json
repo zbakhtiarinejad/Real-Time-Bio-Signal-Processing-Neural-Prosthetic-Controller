@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "Zahra Bakhtiarinejad",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": 9, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 85.1, "left": 163, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": -98, "left": 115.2, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -70.8,
+      "left": -63.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -24.85,
+      "left": 9.6,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "uno:5V", "pot1:VCC", "red", [ "v0" ] ],
+    [ "uno:GND.2", "pot1:GND", "black", [ "v0" ] ],
+    [ "uno:A0", "pot1:SIG", "green", [ "v-9.7", "h-15.4", "v-19.2" ] ],
+    [ "uno:GND.1", "servo1:GND", "black", [ "v-19.2", "h-28.5", "v-38.4" ] ],
+    [ "uno:5V", "servo1:V+", "red", [ "v-211.3", "h-63.4", "v-19.2" ] ],
+    [ "uno:9", "servo1:PWM", "green", [ "v-19.2", "h-66.4", "v-19.2" ] ],
+    [ "uno:13", "r1:2", "green", [ "v28.8", "h-57.2", "v-57.6" ] ],
+    [ "led1:C", "uno:GND.3", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
